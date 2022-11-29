@@ -1,0 +1,21 @@
+<div class="mx-5">
+<div class="container-sm text-center">
+    <h4>Cuban Cities & Attractions</h4>
+    <hr>
+</div>
+<br>
+<br>
+<div class="row align-items-center">
+    <div *ngFor="let city of cities" class="col">
+        <div class="card">
+            <img src="{{city.image}}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title" [ngClass]="{'blue': city.attractionSites.length > 3, 'black': city.attractionSites.length < 3}">{{ city.name }}</h5>
+                <hr>
+                <p class="card-text">{{ city.attractionSites }}</p>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+</div>

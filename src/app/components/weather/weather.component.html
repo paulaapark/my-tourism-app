@@ -1,0 +1,27 @@
+<div class="mx-5">
+    <div class="container-sm text-center">
+        <h4>Weather in Cuba</h4>
+        <hr>
+    </div>
+    <br>
+    <br>
+    <div class="row align-items-center">
+        <div *ngFor="let weather of weatherData" class="col">
+            <a [routerLink]="['/weather', weather.name, weather.springN, weather.springM, weather.summerN, weather.summerM, weather.winterN, weather.winterM, weather.autumnN, weather.autumnM, weather.visitFrom, weather.visitTo]"
+                    class="btn btn-light">
+            <div class="card">
+                <img src="{{weather.image}}" class="card-img-top">
+                <div class="card-body">
+                    <h5>{{ weather.name }}</h5>
+                </div>
+            </div>
+        </a>
+            
+        </div>
+
+        <br>
+    </div>
+</div>
+<br>
+<br>
+<br>

@@ -1,0 +1,70 @@
+<div class="container-sm">
+<h4 class="text-center">Tech Ideas Submission</h4>
+<hr>
+</div>
+<br><br>
+<div class="container-sm">
+    <form [formGroup]="techIdeasForm" class="myForm">
+        <div class="row mb-3">
+            <label for="userName" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="userName" formControlName="name">
+                <span *ngIf="nameFormControl.touched && nameFormControl.errors?.['required']"><small>*Please enter your name.</small></span>
+                <span *ngIf="nameFormControl.touched && nameFormControl.errors?.['minlength'] && !nameFormControl.errors?.['required']"><small>*Entry must be more than 2 letters.</small></span>
+                <span *ngIf="nameFormControl.errors?.['prohibitedWord'] && nameFormControl.touched && !nameFormControl.errors?.['required'] && !nameFormControl.errors?.['minlength']"><small>*Your name must not contain the word "tourist".</small>
+                </span>
+            </div>
+        </div>
+        
+        
+        
+
+        <div class="row mb-3">
+            <label for="userAge" class="col-sm-2 col-form-label">Age</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="userAge" formControlName="age">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="userEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="userEmail" formControlName="email">
+                <span *ngIf="emailFormControl.touched && emailFormControl.errors?.['required']">
+                    <small>*Please enter your email.</small> 
+                </span>
+            </div>
+        </div>
+        
+
+        <div class="row mb-3">
+            <label for="targetCity" class="col-sm-2 col-form-label">Target City</label>
+            <div class="col-sm-10">
+
+                <select class="form-select" aria-label="Default select example" id="targetCity" formControlName="city">
+                    <option value=""> - - select - -</option>
+                    <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
+                </select>
+                <span *ngIf="cityFormControl.touched && cityFormControl.errors?.['required']"><small>*Please select a city.</small>
+                </span>
+            </div>
+        </div>
+        
+
+
+        <div class="row mb-3">
+            <label for="inputIdea" class="col-sm-2 col-form-label">Your Idea Brief</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputIdea" formControlName="brief">
+                <span *ngIf="briefFormControl.touched && briefFormControl.errors?.['required']"><small>*Please enter your tech idea.</small></span>
+                <span *ngIf="briefFormControl.touched && briefFormControl.errors?.['minlength'] && !briefFormControl.errors?.['required']"><small>*Your entry be at least 100 letters.</small></span>
+                <span *ngIf="briefFormControl.touched && briefFormControl.errors?.['prohibitedWord'] && !nameFormControl.errors?.['required'] && !nameFormControl.errors?.['minlength']"><small>*Your brief must not contain the word "nothing".</small></span>
+            </div>
+        </div>
+        
+        
+
+        <button type="submit" class="btn btn-light container-fluid" (click)="onClick()" [disabled]="techIdeasForm.invalid">Submit</button>
+    </form>
+</div>
+<br>
+<br>

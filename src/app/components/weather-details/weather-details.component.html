@@ -1,0 +1,47 @@
+<div class="container-sm">
+<h4 class="text-center">Weather in {{ name }}</h4>
+<hr>
+</div>
+<br>
+
+
+<table class="table text-center container-sm">
+    <thead>
+      <tr>
+        <th scope="col" [attr.colspan]="2">Spring</th>
+        <th scope="col" [attr.colspan]="2">Summer</th>
+        <th scope="col" [attr.colspan]="2">Autumn</th>
+        <th scope="col" [attr.colspan]="2">Winter</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Morning</td>
+        <td>Evening</td>
+        <td>Morning</td>
+        <td>Evening</td>
+        <td>Morning</td>
+        <td>Evening</td>
+        <td>Morning</td>
+        <td>Evening</td>
+
+    
+      </tr>
+      <tr>
+        <td>{{ springM }}</td>
+        <td>{{ springN }}</td>
+        <td>{{ summerM }}</td>
+        <td>{{ summerN }}</td>
+        <td>{{ autumnM }}</td>
+        <td>{{ autumnN }}</td>
+        <td>{{ winterM }}</td>
+        <td>{{ winterN }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<br>
+<br>
+<div class="text-center">
+    The most suitable time to enjoy your holiday in {{ name }} would be between {{ visitFrom }} and {{ visitTo }}.
+</div>
