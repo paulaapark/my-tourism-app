@@ -9,6 +9,7 @@ export class GetCityNamesService {
   arrayNames:any[]=[];
   constructor(private _getW: GetweatherService) { }
   getNames(){
+    this.arrayNames = [];
     this.arrayWeather=this._getW.getWeather();
     for(var i = 0; i < this.arrayWeather.length; i++){
       this.arrayNames.push(this.arrayWeather[i].name);

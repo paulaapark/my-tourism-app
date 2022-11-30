@@ -21,7 +21,7 @@ cities;
     age: [""],
     email: ["",[Validators.required]],
     city: ["", [Validators.required]],
-    brief: ["", [Validators.required,Validators.minLength(100),prohibitedWordValidator(/nothing/i)]]
+    brief: ["", [Validators.required,Validators.minLength(100),prohibitedWordValidator(/nothing/)]]
   });
 
   ngOnInit(): void {
@@ -29,6 +29,7 @@ cities;
 
   onClick(){
     console.log(this.techIdeasForm.controls.brief.value);
+    alert("Thanks for your submission!")
     this.techIdeasForm.reset();
   }
 
