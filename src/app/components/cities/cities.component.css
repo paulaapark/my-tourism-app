@@ -1,6 +1,6 @@
-/* .green {
+.green {
     color: green;
-} */
+}
 
 .black {
     color: black;
@@ -9,4 +9,12 @@
 
 .blue{
     color: blue;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.plain{
+    font-weight:normal;
 }

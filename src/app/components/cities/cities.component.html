@@ -10,7 +10,7 @@
         <div class="card">
             <img src="{{city.image}}" class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title" [ngClass]="{'blue': city.attractionSites.length > 3, 'black': city.attractionSites.length < 3}">{{ city.name }}</h5>
+                <h5 class="card-title" [ngClass]="color ?'bold':'plain'">{{ city.name }}</h5>
                 <hr>
                 <p class="card-text">{{ city.attractionSites }}</p>
             </div>

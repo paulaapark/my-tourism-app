@@ -11,11 +11,10 @@ export class CitiesComponent implements OnInit {
   cities!:any;
   color!:any;
   weatherData!:any;
-  constructor(private _cities:GetcitiesService, private _weatherData:GetweatherService) { }
+  constructor(private _cities:GetcitiesService) { }
   ngOnInit() {
     this.cities=this._cities.getCities();
     this.color=this.colorit();
-    this.weatherData = this._weatherData.getWeather();
     }
   colorit(){
     for (var i =0; i < this.cities.length; i++){
